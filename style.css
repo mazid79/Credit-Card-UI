@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 34rem;
+    width: 90%;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font: inherit;
+    width: auto;
+}
+
+input::placeholder{
+    color: #fff;
+}
+
+label{
+    display: block;
+}
+
+.card{
+    background: rgb(75,85,175);
+    background: linear-gradient(90deg, rgba(75,85,175,1) 2%, rgba(116,36,171,1) 70%, rgba(127,94,180,1) 100%);
+    border-radius: 14px;
+    color: black;
+    padding: 32px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover{
+    transform: scale(1.05) rotate(5deg);
+    background-color: rgba(75,85,175,0.8);
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.card .glow-on-hover:active {
+    color: #000
+}
+
+.card .glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+/* .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+} */
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+.header{
+    margin-bottom: 7rem;
+}
+
+.title{
+    color: #fff;
+    float: left;
+    font-size: 1.5rem;
+}
+
+.logo{
+    float: right;
+}
+
+.row{
+    margin-bottom: 1.5rem;
+}
+
+.content{
+    margin-bottom: 5rem;
+    font-weight: 600;
+}
+
+.content input{
+    outline: none;
+}
+
+.card-number{
+    font-size: 32px;
+}
+
+.card-expire{
+    float: left;
+}
+
+.card-expire input{
+    font-size: 0.9rem;
+}
+
+.card-expire-month{
+    width: 22%;
+}
+
+.card-expire-month, .card-expire-year{
+    float: left;
+    padding: 2px;
+}
+
+.card-cvv{
+    float: right;
+}
+
+.card-cvv input{
+    width: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #000;
+    border-radius: 20px;
+}
